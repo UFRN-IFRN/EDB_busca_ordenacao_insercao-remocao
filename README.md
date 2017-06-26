@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # ALGORITMOS DE BUSCA_ORDENACAO_INSERCAO-REMOCAO
 
 ## Sobre o projeto:
@@ -22,15 +21,15 @@ Comando para executar o programa
 
 ## TODO
 
-- [X] Implementar algoritmos de busca.
-- [X] Implementar algoritmos de ordenacao.
-- [X] Implementar algoritmos de insercao-remocao.
-- [X] Fornecer instancia do problema de busca: base de dados e chave.
-- [X] Fornecer instancia do problema de ordenacao: vetor de tamanho N.
-- [X] Fornecer instancia do problema de insercao-ordenacao: vetor de tamanho N.
-- [X] Adicionar medição de tempo.
-- [X] Salvar dados em arquivo .txt
-- [X] Gerar gráficos.
+- [] Implementar algoritmos de busca.
+- [] Implementar algoritmos de ordenacao.
+- [] Implementar algoritmos de insercao-remocao.
+- [] Fornecer instancia do problema de busca: base de dados e chave.
+- [] Fornecer instancia do problema de ordenacao: vetor de tamanho N.
+- [] Fornecer instancia do problema de insercao-ordenacao: vetor de tamanho N.
+- [] Adicionar medição de tempo.
+- [] Salvar dados em arquivo .txt
+- [] Gerar gráficos.
 
 ## Gerar gráficos
 
@@ -52,7 +51,3 @@ Para gerar os gráficos com o gnuplot, basta executar:
 
 
 Programa desenvolvido por _Bianca Santiago_ (< *bianca.santiago72@gmail.com* >) e _Jaine Budke_ (< *jainebudke@hotmail.com* >), 2017.1
-=======
-# EDB1_busca_ordenacao_insercao-remocao
-Repositório destinado ao terceiro projeto da disciplina de EDB 1
->>>>>>> c62821ed7450f54a75d7afb3e063376d9967f728
