@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ALGORITMOS DE BUSCA_ORDENACAO_INSERCAO-REMOCAO
 
 ## Sobre o projeto:
@@ -51,3 +52,7 @@ Para gerar os gráficos com o gnuplot, basta executar:
 
 
 Programa desenvolvido por _Bianca Santiago_ (< *bianca.santiago72@gmail.com* >) e _Jaine Budke_ (< *jainebudke@hotmail.com* >), 2017.1
+=======
+# EDB1_busca_ordenacao_insercao-remocao
+Repositório destinado ao terceiro projeto da disciplina de EDB 1
+>>>>>>> c62821ed7450f54a75d7afb3e063376d9967f728
