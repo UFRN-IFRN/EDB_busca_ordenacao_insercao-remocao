@@ -5,6 +5,7 @@
 
 
 void insert_listaLigada( node **lista, int elem, int pos ){
+	
 	if(pos == 0) {
 		node *tmp = *lista;
 		*lista = new node;
@@ -40,13 +41,10 @@ void remove_listaLigada( node **lista, int pos ){
 		node *refTras = NULL;
 
 		for( int i=0 ; i < pos && tmp->next != NULL ; i++ ){
-			std::cout << "TMP = " << tmp->data << "\n";
 
 			refTras = tmp;
 			tmp = tmp->next;
 		}
-		
-		std::cout << "REFTRAS = " << refTras->data << "\n";
 
         refTras->next = tmp->next;
 
@@ -59,7 +57,6 @@ void remove_listaLigada( node **lista, int pos ){
 
 int insert_vector( int *lista, int tam, int quantElementos, int elem, int pos ){
 
-	std::cout << "QUANT = " << quantElementos << "\n";
 
  	// verifica se lista tá vazia
 	if( quantElementos == 0 ) { 

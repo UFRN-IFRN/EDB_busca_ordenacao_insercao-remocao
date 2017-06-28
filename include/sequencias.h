@@ -1,6 +1,8 @@
 #ifndef _SEQUENCIAS_H_
 #define _SEQUENCIAS_H_
 
+
+
 struct node {
 	int data;
 	node *next;
@@ -13,5 +15,7 @@ void insert_listaLigada( node **lista, int elem, int pos );
 int insert_vector( int *lista, int tam, int quantElementos, int elem, int pos );
 
 int remove_vector( int *lista, int quantElementos, int pos );
+
+
 
 #endif
