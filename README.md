@@ -1,9 +1,7 @@
-# ALGORITMOS DE BUSCA_ORDENACAO_INSERCAO-REMOCAO
+# ALGORITMOS DE INSERCAO-REMOCAO
 
 ## Sobre o projeto:
 
-Análise empírica dos algoritmos de busca: sequencial e binária, implementados de forma recursiva e iterativa. Com medição de tempo e experimentos com vetores de diferentes tamanhos da base de busca.
-Análise empírica dos algoritmos de ordenacao: selectionSort, insertionSort, quickSort e mergeSort. Com medição de tempo e experimentos com vetores de diferentes tamanhos.
 Análise empírica dos algoritmos de insercao-remocao, implementados em uma lista ligada e em um vetor. Com medição de tempo e experimentos com vetores de diferentes tamanhos.
         
         
@@ -15,7 +13,7 @@ Para compilar o projeto, basta digitar, pelo terminal, o comando abaixo
 
     OU
 
-    g++ -std=c++11 src/main.cpp src/sequencias.cpp -I include -o bin/main
+    g++ -std=c++11 src/main.cpp src/sequencias.cpp -I include -o bin/analise
 
     
 
@@ -26,30 +24,27 @@ Comando para executar o programa
 
 ## TODO
 
-- [] Implementar algoritmos de busca.
-- [] Implementar algoritmos de ordenacao.
 - [] Implementar algoritmos de insercao-remocao.
-- [] Fornecer instancia do problema de busca: base de dados e chave.
-- [] Fornecer instancia do problema de ordenacao: vetor de tamanho N.
-- [] Fornecer instancia do problema de insercao-ordenacao: vetor de tamanho N.
+- [] Fornecer instancia do problema de insercao-remocao: vetor de tamanho N.
 - [] Adicionar medição de tempo.
 - [] Salvar dados em arquivo .txt
 - [] Gerar gráficos.
+
 
 ## Gerar gráficos
 
 Os scripts de geração dos gráficos de análise empírica dos algoritmos de busca estão disponíveis neste projeto.
 Para gerar os gráficos com o gnuplot, basta executar:
 
-	gnuplot> load 'grafBI.gnu'
-	gnuplot> load 'grafBR.gnu'
-	gnuplot> load 'grafSI.gnu'
-	gnuplot> load 'grafSR.gnu'
+	gnuplot> load 'grafILL.gnu'
+	gnuplot> load 'grafIVT.gnu'
+	gnuplot> load 'grafRLL.gnu'
+	gnuplot> load 'grafRVT.gnu'
 
-	gnuplot> load 'graphInsertion.gnu'
-	gnuplot> load 'graphSelection.gnu'
-	gnuplot> load 'graphQuick.gnu'
-	gnuplot> load 'graphMerge.gnu'
+	gnuplot> load 'graphInsertListaLigada.gnu'
+	gnuplot> load 'graphInsertVector.gnu'
+	gnuplot> load 'graphRemoveListaLigada.gnu'
+	gnuplot> load 'graphRemoveVector.gnu'
 
 	gnunplot> load...
 

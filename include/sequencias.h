@@ -6,9 +6,8 @@ struct node {
 	node *next;
 };
 
-void inserirInicio( node *lista, int elem );
 
-void insert_listaLigada( node *lista, int elem, int pos );
+void insert_listaLigada( node **lista, int elem, int pos );
 
 int insert_vector( int *lista, int tam, int quantElementos, int elem, int pos );
 

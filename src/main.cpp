@@ -5,6 +5,8 @@
 int main(){
 	
 	// criando vetor 
+
+	/*
 	int tam = 10;
 	int *list_vector = new int[tam];
 
@@ -25,10 +27,33 @@ int main(){
 	std::cout << list_vector[0] << "\n";
 	std::cout << list_vector[1] << "\n";
 	std::cout << list_vector[2] << "\n";
+	*/
+
 
 	// criando lista ligada
 	struct node *list_listaLigada = NULL;
+	insert_listaLigada( &list_listaLigada, 99, 0 );
+	std::cout << list_listaLigada->data << "\n";
+
+	insert_listaLigada( &list_listaLigada, 12, 1 );
+	std::cout << list_listaLigada->data << "\n";
+	std::cout << list_listaLigada->next->data << "\n";
+
+	insert_listaLigada( &list_listaLigada, 46, 1 );
+	std::cout << list_listaLigada->data << "\n";
+	std::cout << list_listaLigada->next->data << "\n";
+	std::cout << list_listaLigada->next->next->data << "\n";
+
+	insert_listaLigada( &list_listaLigada, 87, 3 );
+	std::cout << list_listaLigada->data << "\n";
+	std::cout << list_listaLigada->next->data << "\n";
+	std::cout << list_listaLigada->next->next->data << "\n";
+	std::cout << list_listaLigada->next->next->next->data << "\n\n\n";
+
+	
+
 
 
 	return 0;
+
 }
