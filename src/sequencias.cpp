@@ -1,4 +1,6 @@
 #include <cstddef>
+#include <iostream>
+
 #include "sequencias.h"
 
 void inserirInicio( node *lista, int elem ){
@@ -32,32 +34,39 @@ void remove_listaLigada( node *lista ){
 		delete *tmp;
 	}
 
-}
-*/
+}*/
 
-void insert_vector( int *lista, int tam, int *quantElementos, int elem, int pos ){
 
-	if( lista == NULL ||    			  // verifica se lista tá vazia 
-		*quantElementos == tam || 		  // ou se está cheia em relação a espaço físico
-		pos <= *quantElementos ) return;  // ou se a posição que vai inserir é menor igual a quantidade de elementos				
-	
+int insert_vector( int *lista, int tam, int quantElementos, int elem, int pos ){
 
-	for ( int i = *quantElementos ; i > pos ; i-- ) {
-		lista[i] = lista[i+1]; // empurra elementos
+	std::cout << "QUANT = " << quantElementos << "\n";
+
+ 	// verifica se lista tá vazia
+	if( quantElementos == 0 ) { 
+		lista[0] = elem;
+		quantElementos++; 	  // incrementa quantidade de elementos
+		return quantElementos;
 	}
 
-	lista[pos] = elem;   // insere elemento na posição indicada
-	*quantElementos++; 	 // incrementa quantidade de elementos
+	for ( int i = quantElementos ; i > pos ; i-- ) {
+		lista[i] = lista[i-1]; // empurra elementos
+	}
+
+	lista[pos] = elem;    // insere elemento na posição indicada
+	quantElementos++; 	  // incrementa quantidade de elementos
+
+	return quantElementos;
 
 }
 
+int remove_vector( int *lista, int quantElementos, int pos ){
 
-void remove_vector( int *lista, int *quantElementos, int pos ){
-
-	if( lista == NULL || *quantElementos == 0 || pos < *quantElementos ) return;
-	for( int i = pos ; i <(*quantElementos-1) ; ++i){
+	for( int i = pos ; i <(quantElementos-1) ; ++i){
 		lista[i] = lista[i+1];
 	}
-	*quantElementos--;
+	lista[quantElementos-1] = 0;
+	quantElementos--;
+
+	return quantElementos;
 
 }
