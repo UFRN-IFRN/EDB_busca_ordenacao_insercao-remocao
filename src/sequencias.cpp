@@ -25,12 +25,33 @@ void insert_listaLigada( node **lista, int elem, int pos ){
 }
 
 
-void remove_listaLigada( node *lista ){
+void remove_listaLigada( node **lista, int pos ){
 
-	if( lista != NULL ){
-		node *tpm = lista;
-		lista = lista->next;
-		delete *tmp;
+	// Remove do inicio
+	if( pos == 0 ){
+
+		node *tmp = *lista;
+		*lista = (*lista)->next;
+		delete tmp;
+
+	} else {
+
+		node *tmp     = *lista;
+		node *refTras = NULL;
+
+		for( int i=0 ; i < pos && tmp->next != NULL ; i++ ){
+			std::cout << "TMP = " << tmp->data << "\n";
+
+			refTras = tmp;
+			tmp = tmp->next;
+		}
+		
+		std::cout << "REFTRAS = " << refTras->data << "\n";
+
+        refTras->next = tmp->next;
+
+		delete tmp;
+
 	}
 
 }

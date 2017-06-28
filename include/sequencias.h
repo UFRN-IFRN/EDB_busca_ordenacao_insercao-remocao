@@ -6,6 +6,7 @@ struct node {
 	node *next;
 };
 
+void remove_listaLigada( node **lista, int pos );
 
 void insert_listaLigada( node **lista, int elem, int pos );
 

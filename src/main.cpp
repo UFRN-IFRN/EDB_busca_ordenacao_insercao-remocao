@@ -50,7 +50,15 @@ int main(){
 	std::cout << list_listaLigada->next->next->data << "\n";
 	std::cout << list_listaLigada->next->next->next->data << "\n\n\n";
 
-	
+
+	remove_listaLigada( &list_listaLigada, 1 );
+
+	node *aux = list_listaLigada;
+	while( aux->next != NULL ){
+		std::cout << aux->data << "\n";
+		aux = aux->next;
+	}
+	std::cout << aux->data << "\n";
 
 
 
