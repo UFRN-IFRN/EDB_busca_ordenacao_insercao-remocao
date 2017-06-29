@@ -1,11 +1,11 @@
 /**
  * @file        manager.cpp
  * @brief   Código fonte com a implementacao de funcoes que
-                 realizam o gerenciamento do processo da análise empírica.
+            realizam o gerenciamento do processo da análise empírica.
  * @author  Bianca Santiago (bianca.santiago72@gmail.com)
  * @author  Jaine Budke (jainebudke@hotmail.com)
- * @since   18/04/2017
- * @date    22/05/2017
+ * @since   19/06/2017
+ * @date    29/06/2017
  */
 
 #include "ordenacao.h"

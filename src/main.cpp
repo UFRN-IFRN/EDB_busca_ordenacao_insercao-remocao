@@ -273,26 +273,28 @@ int main(){
         
         // RESULTADO INSERCAO lista ligada
         std::cout << "Insercao lista ligada: \n";
-        std::function < void( int*, int ) >insertion = insertionSort;
-        analiseCasos( arqsaidaInsercaoLLMelhor, arqsaidaInsertionSortPior, arqsaidaInsertionSortMedio, tamBase[i], insertion );
+        std::function < void( node ** , int, int ) >insertLL = insert_listaLigada;
+        analiseCasos( arqsaidaInsercaoLLMelhor, arqsaidaInsercaoLLPior, arqsaidaInsercaoLLMedio, tamBase[i], insertLL );
         std::cout << "\n";
+
+        // RESULTADO REMOCAO lista ligada
+        std::cout << "Remocao lista ligada: \n";
+        std::function < void( node ** , int, int ) >removeLL = remove_listaLigada;
+        analiseCasos( arqsaidaRemocaoLLMelhor, arqsaidaRemocaoLLPior, arqsaidaRemocaoLLMedio, tamBase[i], removeLL );
+        std::cout << "\n";
+
+
 
         // RESULTADO INSERCAO vector
-        std::cout << "SelectionSort: \n";
-        std::function < void( int*, int ) >selection = selectionSort;
-        analiseCasos( arqsaidaSelectionSortMelhor, arqsaidaSelectionSortPior, arqsaidaSelectionSortMedio, tamBase[i], selection );
+        std::cout << "Insercao vector: \n";
+        std::function < int( int *, int , int , int, int ) >insertV = insert_vector;
+        analiseCasos2( arqsaidaInsercaoVMelhor, arqsaidaInsercaoVPior, arqsaidaInsercaoVMedio, tamBase[i], insertV );
         std::cout << "\n";
 
-        // RESULTADO SELECAO lista ligada
-        std::cout << "QuickSort: \n";
-        std::function < int( int*, int, int ) >quick = quickSort;
-        analiseCasos2( arqsaidaQuickSortMelhor, arqsaidaQuickSortPior, arqsaidaQuickSortMedio, tamBase[i], quick );
-        std::cout << "\n";
-
-        // RESULTADO SELECAO vector
-        std::cout << "MergeSort: \n";
-        std::function < int( int*, int, int ) >merge = mergesort;
-        analiseCasos2( arqsaidaMergeSortMelhor, arqsaidaMergeSortPior, arqsaidaMergeSortMedio, tamBase[i], merge );
+        // RESULTADO REMOCAO vector
+        std::cout << "Remocao vector: \n";
+        std::function < int( int *, int , int , int, int ) >removeV = remove_vector;
+        analiseCasos2( arqsaidaRemocaoVMelhor, arqsaidaRemocaoVPior, arqsaidaRemocaoVMedio, tamBase[i], removeV );
         std::cout << "\n";
 
     }
