@@ -129,7 +129,7 @@ int tempoExecucao( int *V, int n, std::function < int( int *, int , int , int, i
  * @param tamBase Tamanho da base de busca.
  * @param functocall2 Função de ordenacao (quickSort e mergeSort).
  */
-void analiseCasos2( std::ofstream & arqSaidaMelhor, std::ofstream & arqSaidaPior, std::ofstream & arqSaidaMedio, int tamBase, std::function< int( node **, int , int ) >functocall2 ){
+void analiseCasos2( std::ofstream & arqSaidaMelhor, std::ofstream & arqSaidaPior, std::ofstream & arqSaidaMedio, int tamBase, std::function< void( node **, int , int ) >functocall2 ){
 
 
     struct node *base = NULL; // criando lista ligada

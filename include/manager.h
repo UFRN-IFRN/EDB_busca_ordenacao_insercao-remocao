@@ -29,4 +29,6 @@ void analiseCasos( std::ofstream & arqSaidaMelhor, std::ofstream & arqSaidaPior,
 int tempoExecucao2( node **V, int n, std::function < void( node **l , int, int ) >funcOrden  );
 void analiseCasos2( std::ofstream & arqSaidaMelhor, std::ofstream & arqSaidaPior, std::ofstream & arqSaidaMedio, int tamBase, std::function < void( node **l , int, int )>functocall );
 
+
+
 #endif

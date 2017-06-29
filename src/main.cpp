@@ -294,7 +294,7 @@ int main(){
         std::function < void( node ** , int, int ) >removeLL = remove_listaLigada;
         analiseCasos2( arqsaidaRemocaoLLMelhor, arqsaidaRemocaoLLPior, arqsaidaRemocaoLLMedio, tamBase[i], removeLL );
         std::cout << "\n";
-		
+
     }
 
 
