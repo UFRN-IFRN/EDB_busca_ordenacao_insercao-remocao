@@ -34,7 +34,7 @@ int main(){
 
     // Gravando em dadosInsercaoLLMelhor.txt
     std::ofstream arqsaidaInsercaoLLMelhor;
-    arqsaidaInsercaoLLMelhor.open( "dadosInsercaoLLMelhor.txt", std::ios::out );
+    arqsaidaInsercaoLLMelhor.open( "data/output/dadosInsercaoLLMelhor.txt", std::ios::out );
     if( !arqsaidaInsercaoLLMelhor.is_open() ){
         return 0;
     }
@@ -52,7 +52,7 @@ int main(){
 
     // Gravando em dadosInsercaoLLPior.txt
     std::ofstream arqsaidaInsercaoLLPior;
-    arqsaidaInsercaoLLPior.open( "dadosInsercaoLLPior.txt", std::ios::out );
+    arqsaidaInsercaoLLPior.open( "data/output/dadosInsercaoLLPior.txt", std::ios::out );
     if( !arqsaidaInsercaoLLPior.is_open() ){
         return 0;
     }
@@ -70,7 +70,7 @@ int main(){
 
     // Gravando em dadosInsercaoLLMedio.txt
     std::ofstream arqsaidaInsercaoLLMedio;
-    arqsaidaInsercaoLLMedio.open( "dadosInsercaoLLMedio.txt", std::ios::out );
+    arqsaidaInsercaoLLMedio.open( "data/output/dadosInsercaoLLMedio.txt", std::ios::out );
     if( !arqsaidaInsercaoLLMedio.is_open() ){
         return 0;
     }
@@ -91,7 +91,7 @@ int main(){
     ///////////////////////////////////////////////////////////////////////////
     // Gravando dadosInsercaoVMelhor.txt
     std::ofstream arqsaidaInsercaoVMelhor;
-    arqsaidaInsercaoVMelhor.open( "dadosInsercaoVMelhor.txt", std::ios::out );
+    arqsaidaInsercaoVMelhor.open( "data/output/dadosInsercaoVMelhor.txt", std::ios::out );
     if( !arqsaidaInsercaoVMelhor.is_open() ){
         return 0;
     }
@@ -108,7 +108,7 @@ int main(){
 
     // Gravando dadosInsercaoVPior.txt
     std::ofstream arqsaidaInsercaoVPior;
-    arqsaidaInsercaoVPior.open( "dadosInsercaoVPior.txt", std::ios::out );
+    arqsaidaInsercaoVPior.open( "data/output/dadosInsercaoVPior.txt", std::ios::out );
     if( !arqsaidaInsercaoVPior.is_open() ){
         return 0;
     }
@@ -125,7 +125,7 @@ int main(){
 
     // Gravando dadosInsercaoVMedio.txt
     std::ofstream arqsaidaInsercaoVMedio;
-    arqsaidaInsercaoVMedio.open( "dadosInsercaoVMedio.txt", std::ios::out );
+    arqsaidaInsercaoVMedio.open( "data/output/dadosInsercaoVMedio.txt", std::ios::out );
     if( !arqsaidaInsercaoVMedio.is_open() ){
         return 0;
     }
@@ -148,7 +148,7 @@ int main(){
     ///////////////////////////////////////////////////////////////////////////
     // Gravando dadosRemocaoLLMelhor.txt
     std::ofstream arqsaidaRemocaoLLMelhor;
-    arqsaidaRemocaoLLMelhor.open( "dadosRemocaoLLMelhor.txt", std::ios::out );
+    arqsaidaRemocaoLLMelhor.open( "data/output/dadosRemocaoLLMelhor.txt", std::ios::out );
     if( !arqsaidaRemocaoLLMelhor.is_open() ){
         return 0;
     }
@@ -165,7 +165,7 @@ int main(){
 
     // Gravando dadosRemocaoLLPior.txt
     std::ofstream arqsaidaRemocaoLLPior;
-    arqsaidaRemocaoLLPior.open( "dadosRemocaoLLPior.txt", std::ios::out );
+    arqsaidaRemocaoLLPior.open( "data/output/dadosRemocaoLLPior.txt", std::ios::out );
     if( !arqsaidaRemocaoLLPior.is_open() ){
         return 0;
     }
@@ -182,7 +182,7 @@ int main(){
 
     // Gravando dadosRemocaoLLMedio.txt
     std::ofstream arqsaidaRemocaoLLMedio;
-    arqsaidaRemocaoLLMedio.open( "dadosRemocaoLLMedio.txt", std::ios::out );
+    arqsaidaRemocaoLLMedio.open( "data/output/dadosRemocaoLLMedio.txt", std::ios::out );
     if( !arqsaidaRemocaoLLMedio.is_open() ){
         return 0;
     }
@@ -203,7 +203,7 @@ int main(){
     ///////////////////////////////////////////////////////////////////////////
     // Gravando dadosRemocaoVMelhor.txt
     std::ofstream arqsaidaRemocaoVMelhor;
-    arqsaidaRemocaoVMelhor.open( "dadosRemocaoVMelhor.txt", std::ios::out );
+    arqsaidaRemocaoVMelhor.open( "data/output/dadosRemocaoVMelhor.txt", std::ios::out );
     if( !arqsaidaRemocaoVMelhor.is_open() ){
         return 0;
     }
@@ -221,7 +221,7 @@ int main(){
 
     // Gravando dadosRemocaoVPior.txt
     std::ofstream arqsaidaRemocaoVPior;
-    arqsaidaRemocaoVPior.open( "dadosRemocaoVPior.txt", std::ios::out );
+    arqsaidaRemocaoVPior.open( "data/output/dadosRemocaoVPior.txt", std::ios::out );
     if( !arqsaidaRemocaoVPior.is_open() ){
         return 0;
     }
@@ -239,7 +239,7 @@ int main(){
 
     // Gravando dadosRemocaoVMedio.txt
     std::ofstream arqsaidaRemocaoVMedio;
-    arqsaidaRemocaoVMedio.open( "dadosRemocaoVMedio.txt", std::ios::out );
+    arqsaidaRemocaoVMedio.open( "data/output/dadosRemocaoVMedio.txt", std::ios::out );
     if( !arqsaidaRemocaoVMedio.is_open() ){
         return 0;
     }
