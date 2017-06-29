@@ -38,7 +38,7 @@ void generateRandomBaseLL( node **base, int tamBase ){
 
     for ( int i = 0; i < tamBase; ++i ) {         // gerando base de busca
         int num_aleatorio = std::rand() % 200000; // número aleatório entre 0 e 2000
-        insert_listaLigada( base, num_aleatorio, i ); // Add valor à base
+        insert_listaLigada( base, num_aleatorio, 0 ); // Add valor à base
     }
 
 }
@@ -151,7 +151,7 @@ void analiseCasos2( std::ofstream & arqSaidaMelhor, std::ofstream & arqSaidaPior
     for ( int i = 0; i < 100; ++i ) {
 
         // gera base de dados
-        generateRandomBaseLL( &base, tamBase );
+        //generateRandomBaseLL( &base, tamBase );
 
         // recebendo tempo que levou para ordenar base
         double tempo = tempoExecucao2( &base, tamBase, functocall2 );
@@ -196,7 +196,6 @@ int tempoExecucao2( node **V, int n, std::function < void( node **l , int, int )
     start = std::chrono::system_clock::now();
     funcOrden( V, 42 , pos ); // ordena vetor com insertionSort
     end = std::chrono::system_clock::now();
-
     int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds> (end-start).count();
 
     return elapsed_seconds;
