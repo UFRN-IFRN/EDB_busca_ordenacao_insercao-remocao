@@ -1,5 +1,5 @@
 /**
- * @file        manager.cpp
+ * @file    manager.cpp
  * @brief   Código fonte com a implementacao de funcoes que
             realizam o gerenciamento do processo da análise empírica.
  * @author  Bianca Santiago (bianca.santiago72@gmail.com)
@@ -8,7 +8,7 @@
  * @date    29/06/2017
  */
 
-#include "ordenacao.h"
+#include "sequencias.h"
 #include "manager.h"
 
 #include <chrono>
@@ -23,11 +23,22 @@
  * @param base Vetor com a base de busca.
  * @param tamBase Tamanho da base de busca.
  */
-void generateRandomBase( int *base, int tamBase ){
+void generateRandomBaseVector( int *base, int tamBase ){
 
-    for ( int i = 0; i < tamBase; ++i ) { // gerando base de busca
+    int qntElem = 0;
+
+    for ( int i = 0; i < tamBase; ++i ) {         // gerando base de busca
         int num_aleatorio = std::rand() % 200000; // número aleatório entre 0 e 2000
-        base[i] = num_aleatorio; // Add valor à base
+        qntElem = insert_vector( base, tamBase, qntElem, num_aleatorio, i );  // Add valor à base
+    }
+
+}
+
+void generateRandomBaseLL( node **base, int tamBase ){
+
+    for ( int i = 0; i < tamBase; ++i ) {         // gerando base de busca
+        int num_aleatorio = std::rand() % 200000; // número aleatório entre 0 e 2000
+        insert_listaLigada( base, num_aleatorio, i ); // Add valor à base
     }
 
 }
@@ -38,14 +49,15 @@ void generateRandomBase( int *base, int tamBase ){
  * @param tamBase Tamanho da base de busca.
  * @param functocall Função de ordenacao (insertionSort ou selectionSort).
  */
-void analiseCasos( std::ofstream & arqSaidaMelhor, std::ofstream & arqSaidaPior, std::ofstream & arqSaidaMedio, int tamBase, std::function< void( int *, int ) >functocall ){
+void analiseCasos( std::ofstream & arqSaidaMelhor, std::ofstream & arqSaidaPior, std::ofstream & arqSaidaMedio, int tamBase, std::function < int( int *, int , int , int, int )>functocall ){
 
-    int base[ tamBase ];   // Vetor com base de busca
+    int *base = new int[tamBase]; // Vetor com base de busca
+
 
     // ==================================
     // gera base de dados e tempo para inicializar melhor e pior tempo
     // ==================================
-    generateRandomBase( base, tamBase );
+    generateRandomBaseVector( base, tamBase );
     double tempo = tempoExecucao( base, tamBase, functocall );
 
     // declara e inicializa variaveis de medicao de tempo
@@ -59,7 +71,7 @@ void analiseCasos( std::ofstream & arqSaidaMelhor, std::ofstream & arqSaidaPior,
     for ( int i = 0; i < 100; ++i ) {
 
         // gera base de dados
-        generateRandomBase( base, tamBase );
+        generateRandomBaseVector( base, tamBase );
 
         // recebendo tempo que levou para ordenar base
         double tempo = tempoExecucao( base, tamBase, functocall );
@@ -97,11 +109,12 @@ void analiseCasos( std::ofstream & arqSaidaMelhor, std::ofstream & arqSaidaPior,
  * @param funcOrden Função de ordenacao (insertionSort ou selectionSort).
  * @return O tempo de execução da ordenacao.
  */
-int tempoExecucao( int *V, int n, std::function< void( int * , int ) >funcOrden  ){
+int tempoExecucao( int *V, int n, std::function < int( int *, int , int , int, int ) >funcOrden  ){
 
+    int pos = std::rand() % n; // número aleatório entre 0 e quantidade de elementos
     std::chrono::time_point<std::chrono::system_clock> start, end;
     start = std::chrono::system_clock::now();
-    funcOrden( V, n ); // ordena vetor com insertionSort ou selectionSort
+    funcOrden( V, n, n-1, 99, pos ); // ordena vetor com insertionSort ou selectionSort
     end = std::chrono::system_clock::now();
 
     int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds> (end-start).count();
@@ -116,15 +129,16 @@ int tempoExecucao( int *V, int n, std::function< void( int * , int ) >funcOrden 
  * @param tamBase Tamanho da base de busca.
  * @param functocall2 Função de ordenacao (quickSort e mergeSort).
  */
-void analiseCasos2( std::ofstream & arqSaidaMelhor, std::ofstream & arqSaidaPior, std::ofstream & arqSaidaMedio, int tamBase, std::function< int( int *, int , int ) >functocall2 ){
+void analiseCasos2( std::ofstream & arqSaidaMelhor, std::ofstream & arqSaidaPior, std::ofstream & arqSaidaMedio, int tamBase, std::function< int( node **, int , int ) >functocall2 ){
 
-    int base[ tamBase ];   // Vetor com base de busca
 
-    // ==================================
+    struct node *base = NULL; // criando lista ligada
+
+    // =====================================================
     // gera base de dados e tempo para inicializar melhor e pior tempo
-    // ==================================
-    generateRandomBase( base, tamBase );
-    double tempo = tempoExecucao2( base, tamBase, functocall2 );
+    // =====================================================
+    generateRandomBaseLL( &base, tamBase );
+    double tempo = tempoExecucao2( &base, tamBase, functocall2 );
 
     // declara e inicializa variaveis de medicao de tempo
     int melhorTempo = tempo;
@@ -137,10 +151,10 @@ void analiseCasos2( std::ofstream & arqSaidaMelhor, std::ofstream & arqSaidaPior
     for ( int i = 0; i < 100; ++i ) {
 
         // gera base de dados
-        generateRandomBase( base, tamBase );
+        generateRandomBaseLL( &base, tamBase );
 
         // recebendo tempo que levou para ordenar base
-        double tempo = tempoExecucao2( base, tamBase, functocall2 );
+        double tempo = tempoExecucao2( &base, tamBase, functocall2 );
 
         // atualizando pior e melhor caso
         if ( tempo < melhorTempo ) { // verifica se o novo tempo é menor que o melhor computado
@@ -174,12 +188,13 @@ void analiseCasos2( std::ofstream & arqSaidaMelhor, std::ofstream & arqSaidaPior
  * @param funcOrden Função de ordenacao (quickSort e mergeSort).
  * @return O tempo de execução da ordenacao.
  */
-int tempoExecucao2( int *V, int n, std::function< int( int * , int , int ) >funcOrden  ){
+int tempoExecucao2( node **V, int n, std::function < void( node **l , int, int ) >funcOrden  ){
 
+    int pos = std::rand() % n; // número aleatório entre 0 e quantidade de elementos
 
     std::chrono::time_point<std::chrono::system_clock> start, end;
     start = std::chrono::system_clock::now();
-    funcOrden( V, 0, n-1 ); // ordena vetor com insertionSort
+    funcOrden( V, 42 , pos ); // ordena vetor com insertionSort
     end = std::chrono::system_clock::now();
 
     int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds> (end-start).count();

@@ -26,7 +26,7 @@ void insert_listaLigada( node **lista, int elem, int pos ){
 }
 
 
-void remove_listaLigada( node **lista, int pos ){
+void remove_listaLigada( node **lista, int neutro, int pos ){
 
 	// Remove do inicio
 	if( pos == 0 ){
@@ -54,7 +54,6 @@ void remove_listaLigada( node **lista, int pos ){
 
 }
 
-
 int insert_vector( int *lista, int tam, int quantElementos, int elem, int pos ){
 
 
@@ -76,7 +75,8 @@ int insert_vector( int *lista, int tam, int quantElementos, int elem, int pos ){
 
 }
 
-int remove_vector( int *lista, int quantElementos, int pos ){
+
+int remove_vector( int *lista, int neutro1, int quantElementos, int neutro2, int pos ){
 
 	for( int i = pos ; i <(quantElementos-1) ; ++i){
 		lista[i] = lista[i+1];

@@ -9,11 +9,8 @@ Análise empírica dos algoritmos de insercao-remocao, implementados em uma list
 
 Para compilar o projeto, basta digitar, pelo terminal, o comando abaixo
 
-    make
 
-    OU
-
-    g++ -std=c++11 src/main.cpp src/sequencias.cpp -I include -o bin/analise
+    g++ -std=c++11 src/main.cpp src/sequencias.cpp src/manager.cpp -I include -o bin/analise
 
     
 
@@ -24,11 +21,11 @@ Comando para executar o programa
 
 ## TODO
 
-- [] Implementar algoritmos de insercao-remocao.
-- [] Fornecer instancia do problema de insercao-remocao: vetor de tamanho N.
-- [] Adicionar medição de tempo.
-- [] Salvar dados em arquivo .txt
-- [] Gerar gráficos.
+- [X] Implementar algoritmos de insercao-remocao.
+- [X] Fornecer instancia do problema de insercao-remocao: vetor de tamanho N.
+- [X] Adicionar medição de tempo.
+- [X] Salvar dados em arquivo .txt
+- [ ] Gerar gráficos.
 
 
 ## Gerar gráficos

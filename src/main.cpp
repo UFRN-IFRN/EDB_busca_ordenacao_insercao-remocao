@@ -25,7 +25,7 @@ int main(){
     std::srand(std::time(0)); // semente do rand
 
     // declara os diferentes tamanhos de base de busca que serão analisados
-    int tamBase[] = { 1000, 5000, 10000, 15000, 50000, 100000, 500000, 600000, 700000, 800000, 900000, 1000000 };
+    int tamBase[] = { 500000, 600000, 700000, 800000, 900000, 1000000, 5000000, 6000000, 7000000, 8000000, 9000000, 10000000 };
 
 
     ///////////////////////////////////////////////////////////////////////////
@@ -266,37 +266,35 @@ int main(){
 
 
 
-    for( int i = 0 ; i <  12; ++i ){
+    for( int i = 0 ; i < 12; ++i ){
         std::cout << "===========================\n";
         std::cout << "Tamanho de busca = " << tamBase[i] << "\n";
         std::cout << "===========================\n";
         
-        // RESULTADO INSERCAO lista ligada
-        std::cout << "Insercao lista ligada: \n";
-        std::function < void( node ** , int, int ) >insertLL = insert_listaLigada;
-        analiseCasos( arqsaidaInsercaoLLMelhor, arqsaidaInsercaoLLPior, arqsaidaInsercaoLLMedio, tamBase[i], insertLL );
-        std::cout << "\n";
-
-        // RESULTADO REMOCAO lista ligada
-        std::cout << "Remocao lista ligada: \n";
-        std::function < void( node ** , int, int ) >removeLL = remove_listaLigada;
-        analiseCasos( arqsaidaRemocaoLLMelhor, arqsaidaRemocaoLLPior, arqsaidaRemocaoLLMedio, tamBase[i], removeLL );
-        std::cout << "\n";
-
-
-
         // RESULTADO INSERCAO vector
         std::cout << "Insercao vector: \n";
         std::function < int( int *, int , int , int, int ) >insertV = insert_vector;
-        analiseCasos2( arqsaidaInsercaoVMelhor, arqsaidaInsercaoVPior, arqsaidaInsercaoVMedio, tamBase[i], insertV );
+        analiseCasos( arqsaidaInsercaoVMelhor, arqsaidaInsercaoVPior, arqsaidaInsercaoVMedio, tamBase[i], insertV );
         std::cout << "\n";
 
         // RESULTADO REMOCAO vector
         std::cout << "Remocao vector: \n";
         std::function < int( int *, int , int , int, int ) >removeV = remove_vector;
-        analiseCasos2( arqsaidaRemocaoVMelhor, arqsaidaRemocaoVPior, arqsaidaRemocaoVMedio, tamBase[i], removeV );
+        analiseCasos( arqsaidaRemocaoVMelhor, arqsaidaRemocaoVPior, arqsaidaRemocaoVMedio, tamBase[i], removeV );
+        std::cout << "\n";
+        
+        // RESULTADO INSERCAO lista ligada
+        std::cout << "Insercao lista ligada: \n";
+        std::function < void( node ** , int, int ) >insertLL = insert_listaLigada;
+        analiseCasos2( arqsaidaInsercaoLLMelhor, arqsaidaInsercaoLLPior, arqsaidaInsercaoLLMedio, tamBase[i], insertLL );
         std::cout << "\n";
 
+        // RESULTADO REMOCAO lista ligada
+        std::cout << "Remocao lista ligada: \n";
+        std::function < void( node ** , int, int ) >removeLL = remove_listaLigada;
+        analiseCasos2( arqsaidaRemocaoLLMelhor, arqsaidaRemocaoLLPior, arqsaidaRemocaoLLMedio, tamBase[i], removeLL );
+        std::cout << "\n";
+		
     }
 
 
