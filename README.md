@@ -10,13 +10,13 @@ Análise empírica dos algoritmos de insercao-remocao, implementados em uma list
 Para compilar o projeto, basta digitar, pelo terminal, o comando abaixo
 
 
-    g++ -std=c++11 src/main.cpp src/sequencias.cpp src/manager.cpp -I include -o bin/analise
+    make
 
     
 
 Comando para executar o programa
     
-    ./bin/analise
+    ./bin/sequencias
 
 
 ## TODO
@@ -25,25 +25,7 @@ Comando para executar o programa
 - [X] Fornecer instancia do problema de insercao-remocao: vetor de tamanho N.
 - [X] Adicionar medição de tempo.
 - [X] Salvar dados em arquivo .txt
-- [ ] Gerar gráficos.
-
-
-## Gerar gráficos
-
-Os scripts de geração dos gráficos de análise empírica dos algoritmos de busca estão disponíveis neste projeto.
-Para gerar os gráficos com o gnuplot, basta executar:
-
-	gnuplot> load 'grafILL.gnu'
-	gnuplot> load 'grafIVT.gnu'
-	gnuplot> load 'grafRLL.gnu'
-	gnuplot> load 'grafRVT.gnu'
-
-	gnuplot> load 'graphInsertListaLigada.gnu'
-	gnuplot> load 'graphInsertVector.gnu'
-	gnuplot> load 'graphRemoveListaLigada.gnu'
-	gnuplot> load 'graphRemoveVector.gnu'
-
-	gnunplot> load...
+- [X] Gerar gráficos.
 
 
 
